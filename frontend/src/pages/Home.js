@@ -90,7 +90,7 @@ const Home = () => {
       <section className="py-20 px-4 sm:px-6 lg:px-8" data-testid="hero-section">
         <div className="max-w-7xl mx-auto text-center">
           <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
-            Find the Best <span className="text-blue-600">Local Services</span>
+            Find the Best <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">Local Services</span>
             <br />Near You
           </h1>
           <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
