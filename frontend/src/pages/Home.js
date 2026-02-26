@@ -66,11 +66,11 @@ const Home = () => {
             <div className="flex items-center space-x-4">
               {user ? (
                 <>
-                  <Link to="/chat" className="text-gray-700 hover:text-blue-600">
+                  <Link to="/chat" className="text-gray-700 hover:text-orange-600">
                     <Users className="w-5 h-5" />
                   </Link>
-                  <Link to="/profile" className="flex items-center space-x-2 text-gray-700 hover:text-blue-600">
-                    <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white text-sm">
+                  <Link to="/profile" className="flex items-center space-x-2 text-gray-700 hover:text-orange-600">
+                    <div className="w-8 h-8 bg-gradient-to-r from-orange-500 to-red-600 rounded-full flex items-center justify-center text-white text-sm">
                       {user.full_name.charAt(0)}
                     </div>
                   </Link>
