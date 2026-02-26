@@ -39,11 +39,14 @@ const Home = () => {
       <nav className="bg-white shadow-sm sticky top-0 z-50" data-testid="main-navigation">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
-            <Link to="/" className="flex items-center space-x-2">
-              <div className="w-10 h-10 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-xl">SM</span>
+            <Link to="/" className="flex items-center space-x-3">
+              <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-red-600 rounded-xl flex items-center justify-center shadow-lg">
+                <span className="text-white font-bold text-2xl">SD</span>
               </div>
-              <span className="text-xl font-bold text-gray-900">ServiceMarket</span>
+              <div className="flex flex-col">
+                <span className="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-red-600">SD DEAL</span>
+                <span className="text-xs text-gray-500 -mt-1">Service Marketplace</span>
+              </div>
             </Link>
             
             <div className="hidden md:flex items-center space-x-8">
