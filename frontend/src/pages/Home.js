@@ -87,13 +87,13 @@ const Home = () => {
       </nav>
 
       {/* Hero Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8" data-testid="hero-section">
+      <section className="py-12 md:py-20 px-4 sm:px-6 lg:px-8" data-testid="hero-section">
         <div className="max-w-7xl mx-auto text-center">
-          <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 md:mb-6">
             Find the Best <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">Local Services</span>
             <br />Near You
           </h1>
-          <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-gray-600 mb-6 md:mb-8 max-w-2xl mx-auto">
             Connect with trusted professionals for all your service needs. Book instantly, pay securely, and get the job done.
           </p>
 
