@@ -28,18 +28,20 @@ const Auth = () => {
     setLoading(true);
 
     try {
+      let userData;
       if (mode === 'login') {
-        await login(formData.email, formData.password);
+        userData = await login(formData.email, formData.password);
       } else {
-        await register(formData.email, formData.password, formData.full_name, formData.phone, role);
+        userData = await register(formData.email, formData.password, formData.full_name, formData.phone, role);
       }
       
-      // Redirect based on role
-      if (role === 'provider') {
+      // Redirect based on user role
+      const userRole = userData?.role || role;
+      if (userRole === 'provider') {
         navigate('/provider/dashboard');
-      } else if (role === 'customer') {
+      } else if (userRole === 'customer') {
         navigate('/customer/dashboard');
-      } else if (role === 'admin') {
+      } else if (userRole === 'admin') {
         navigate('/admin/dashboard');
       } else {
         navigate('/');
