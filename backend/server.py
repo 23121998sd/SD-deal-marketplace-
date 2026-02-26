@@ -1194,12 +1194,7 @@ async def process_withdrawal(withdrawal_id: str, status: str, admin_notes: Optio
     
     return {"message": "Withdrawal processed"}
 
-# Include the router in the main app
-app.include_router(api_router)
-
-# Mount Socket.IO
-socketio_app = socketio.ASGIApp(sio, other_asgi_app=app)
-
+# Add middleware first
 app.add_middleware(
     CORSMiddleware,
     allow_credentials=True,
@@ -1207,6 +1202,9 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# Include the router in the main app
+app.include_router(api_router)
 
 # Configure logging
 logging.basicConfig(
@@ -1219,6 +1217,9 @@ logger = logging.getLogger(__name__)
 async def shutdown_db_client():
     client.close()
 
+# Create Socket.IO ASGI app - this wraps the FastAPI app
+app = socketio.ASGIApp(sio, other_asgi_app=app)
+
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(socketio_app, host="0.0.0.0", port=8001)
+    uvicorn.run(app, host="0.0.0.0", port=8001)
