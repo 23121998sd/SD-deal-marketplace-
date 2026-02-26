@@ -31,3 +31,11 @@ python server.py
 cd frontend
 yarn install
 yarn star
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+**Developed by Rubi Kaushik**  
+**GitHub: [@23121998sd](https://github.com/23121998sd)**
