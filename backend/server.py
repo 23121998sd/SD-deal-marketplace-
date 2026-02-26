@@ -413,11 +413,12 @@ async def register(user: UserCreate):
     
     # Create token
     access_token = create_access_token(data={"sub": user_obj.id})
+    user_response = UserResponse(**user_obj.model_dump())
     
     return TokenResponse(
         access_token=access_token,
         token_type="bearer",
-        user=user_obj
+        user=user_response
     )
 
 @api_router.post("/auth/login", response_model=TokenResponse)
