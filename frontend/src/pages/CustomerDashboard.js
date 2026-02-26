@@ -11,10 +11,13 @@ const CustomerDashboard = () => {
   const [filter, setFilter] = useState('all');
 
   useEffect(() => {
-    fetchBookings();
-  }, []);
+    if (user) {
+      fetchBookings();
+    }
+  }, [user]);
 
   const fetchBookings = async () => {
+    if (!user) return;
     try {
       const response = await getBookings();
       setBookings(response.data);
