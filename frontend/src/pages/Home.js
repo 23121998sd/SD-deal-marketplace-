@@ -16,7 +16,7 @@ const Home = () => {
   }, []);
 
   const fetchData = async () => {
-    try {
+    try {\n      setLoading(true);
       const [categoriesRes, servicesRes] = await Promise.all([
         getCategories(),
         getServices({ sort_by: 'rating' })
@@ -25,6 +25,8 @@ const Home = () => {
       setFeaturedServices(servicesRes.data.slice(0, 6));
     } catch (error) {
       console.error('Failed to fetch data:', error);
+    } finally {
+      setLoading(false);
     }
   };
 
