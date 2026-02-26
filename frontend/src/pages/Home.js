@@ -16,7 +16,8 @@ const Home = () => {
   }, []);
 
   const fetchData = async () => {
-    try {\n      setLoading(true);
+    try {
+      setLoading(true);
       const [categoriesRes, servicesRes] = await Promise.all([
         getCategories(),
         getServices({ sort_by: 'rating' })
