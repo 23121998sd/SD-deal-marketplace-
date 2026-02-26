@@ -77,8 +77,8 @@ const Home = () => {
                 </>
               ) : (
                 <>
-                  <Link to="/auth?mode=login" data-testid="login-button" className="text-gray-700 hover:text-blue-600 transition">Login</Link>
-                  <Link to="/auth?mode=register" data-testid="register-button" className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition">Get Started</Link>
+                  <Link to="/auth?mode=login" data-testid="login-button" className="text-gray-700 hover:text-orange-600 transition">Login</Link>
+                  <Link to="/auth?mode=register" data-testid="register-button" className="bg-gradient-to-r from-orange-500 to-red-600 text-white px-6 py-2 rounded-lg hover:shadow-lg transition">Get Started</Link>
                 </>
               )}
             </div>
