@@ -280,7 +280,7 @@ const Home = () => {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
-              <h3 className="font-bold text-lg mb-4">ServiceMarket</h3>
+              <h3 className="font-bold text-lg mb-4 bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent">SD DEAL</h3>
               <p className="text-gray-400">Connecting customers with trusted local service providers.</p>
             </div>
             <div>
