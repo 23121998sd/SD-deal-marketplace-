@@ -4,6 +4,10 @@ import { AuthProvider, useAuth } from './context/AuthContext';
 import { SocketProvider } from './context/SocketContext';
 import Home from './pages/Home';
 import Auth from './pages/Auth';
+import BrowseServices from './pages/BrowseServices';
+import ServiceDetails from './pages/ServiceDetails';
+import CustomerDashboard from './pages/CustomerDashboard';
+import ProviderDashboard from './pages/ProviderDashboard';
 import './App.css';
 
 // Protected Route Component
@@ -13,7 +17,7 @@ const ProtectedRoute = ({ children, allowedRoles }) => {
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-orange-600"></div>
       </div>
     );
   }
@@ -35,19 +39,15 @@ function AppContent() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/auth" element={<Auth />} />
+        <Route path="/services" element={<BrowseServices />} />
+        <Route path="/services/:id" element={<ServiceDetails />} />
         
         {/* Customer Routes */}
         <Route 
           path="/customer/dashboard" 
           element={
             <ProtectedRoute allowedRoles={['customer']}>
-              <div className="p-8">
-                <h1 className="text-2xl font-bold">Customer Dashboard</h1>
-                <p className="text-gray-600 mt-2">View your bookings and manage your account</p>
-                <div className="mt-8 bg-white p-6 rounded-lg shadow">
-                  <p className="text-gray-500">Customer dashboard coming soon with all bookings, chat, and profile management.</p>
-                </div>
-              </div>
+              <CustomerDashboard />
             </ProtectedRoute>
           } 
         />
@@ -57,13 +57,7 @@ function AppContent() {
           path="/provider/dashboard" 
           element={
             <ProtectedRoute allowedRoles={['provider']}>
-              <div className="p-8">
-                <h1 className="text-2xl font-bold">Provider Dashboard</h1>
-                <p className="text-gray-600 mt-2">Manage your services and bookings</p>
-                <div className="mt-8 bg-white p-6 rounded-lg shadow">
-                  <p className="text-gray-500">Provider dashboard coming soon with service management, booking requests, and earnings.</p>
-                </div>
-              </div>
+              <ProviderDashboard />
             </ProtectedRoute>
           } 
         />
@@ -81,33 +75,6 @@ function AppContent() {
                 </div>
               </div>
             </ProtectedRoute>
-          } 
-        />
-
-        {/* Services Routes */}
-        <Route 
-          path="/services" 
-          element={
-            <div className="p-8">
-              <h1 className="text-2xl font-bold">Browse Services</h1>
-              <p className="text-gray-600 mt-2">Find the perfect service for your needs</p>
-              <div className="mt-8 bg-white p-6 rounded-lg shadow">
-                <p className="text-gray-500">Services listing page with filters and search coming soon.</p>
-              </div>
-            </div>
-          } 
-        />
-
-        <Route 
-          path="/services/:id" 
-          element={
-            <div className="p-8">
-              <h1 className="text-2xl font-bold">Service Details</h1>
-              <p className="text-gray-600 mt-2">View service information and book</p>
-              <div className="mt-8 bg-white p-6 rounded-lg shadow">
-                <p className="text-gray-500">Service details page with booking form coming soon.</p>
-              </div>
-            </div>
           } 
         />
 
@@ -191,7 +158,7 @@ function AppContent() {
                   </div>
                   <h2 className="text-2xl font-bold mb-2">Booking Successful!</h2>
                   <p className="text-gray-600 mb-6">Your booking has been confirmed and payment processed.</p>
-                  <a href="/customer/dashboard" className="bg-blue-600 text-white px-6 py-3 rounded-lg inline-block hover:bg-blue-700 transition">
+                  <a href="/customer/dashboard" className="bg-gradient-to-r from-orange-500 to-red-600 text-white px-6 py-3 rounded-lg inline-block hover:shadow-lg transition">
                     View My Bookings
                   </a>
                 </div>
@@ -208,7 +175,7 @@ function AppContent() {
               <div className="text-center">
                 <h1 className="text-6xl font-bold text-gray-900 mb-4">404</h1>
                 <p className="text-xl text-gray-600 mb-8">Page not found</p>
-                <a href="/" className="bg-blue-600 text-white px-6 py-3 rounded-lg inline-block hover:bg-blue-700 transition">
+                <a href="/" className="bg-gradient-to-r from-orange-500 to-red-600 text-white px-6 py-3 rounded-lg inline-block hover:shadow-lg transition">
                   Go Home
                 </a>
               </div>
