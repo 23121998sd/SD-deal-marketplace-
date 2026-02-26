@@ -50,16 +50,16 @@ const Home = () => {
             </Link>
             
             <div className="hidden md:flex items-center space-x-8">
-              <Link to="/services" className="text-gray-700 hover:text-blue-600 transition">Browse Services</Link>
-              <Link to="/how-it-works" className="text-gray-700 hover:text-blue-600 transition">How It Works</Link>
+              <Link to="/services" className="text-gray-700 hover:text-orange-600 transition">Browse Services</Link>
+              <Link to="/how-it-works" className="text-gray-700 hover:text-orange-600 transition">How It Works</Link>
               {user && user.role === 'provider' && (
-                <Link to="/provider/dashboard" className="text-gray-700 hover:text-blue-600 transition">Dashboard</Link>
+                <Link to="/provider/dashboard" className="text-gray-700 hover:text-orange-600 transition">Dashboard</Link>
               )}
               {user && user.role === 'customer' && (
-                <Link to="/customer/dashboard" className="text-gray-700 hover:text-blue-600 transition">My Bookings</Link>
+                <Link to="/customer/dashboard" className="text-gray-700 hover:text-orange-600 transition">My Bookings</Link>
               )}
               {user && user.role === 'admin' && (
-                <Link to="/admin/dashboard" className="text-gray-700 hover:text-blue-600 transition">Admin</Link>
+                <Link to="/admin/dashboard" className="text-gray-700 hover:text-orange-600 transition">Admin</Link>
               )}
             </div>
 
