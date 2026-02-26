@@ -185,7 +185,7 @@ const Home = () => {
                   <div className="text-6xl">{service.category?.icon || '🔧'}</div>
                 </div>
                 <div className="p-6">
-                  <h3 className="font-bold text-lg text-gray-900 mb-2 group-hover:text-blue-600 transition">
+                  <h3 className="font-bold text-lg text-gray-900 mb-2 group-hover:text-orange-600 transition">
                     {service.title}
                   </h3>
                   <p className="text-gray-600 text-sm mb-4 line-clamp-2">{service.description}</p>
@@ -195,7 +195,7 @@ const Home = () => {
                       <span className="text-sm font-semibold">{service.rating.toFixed(1)}</span>
                       <span className="text-sm text-gray-500">({service.total_bookings})</span>
                     </div>
-                    <div className="text-lg font-bold text-blue-600">${service.price}</div>
+                    <div className="text-lg font-bold bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">${service.price}</div>
                   </div>
                   {service.provider && (
                     <div className="mt-4 pt-4 border-t flex items-center space-x-2">
