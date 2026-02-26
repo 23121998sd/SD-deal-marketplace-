@@ -168,7 +168,7 @@ const Home = () => {
         <div className="max-w-7xl mx-auto">
           <div className="flex justify-between items-center mb-8">
             <h2 className="text-3xl font-bold text-gray-900">Top Rated Services</h2>
-            <Link to="/services" className="text-blue-600 hover:text-blue-700 flex items-center space-x-2">
+            <Link to="/services" className="text-orange-600 hover:text-red-600 flex items-center space-x-2 font-semibold">
               <span>View All</span>
               <ArrowRight className="w-5 h-5" />
             </Link>
