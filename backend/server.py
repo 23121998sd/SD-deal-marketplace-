@@ -436,6 +436,7 @@ async def login(credentials: UserLogin):
         user_doc['created_at'] = datetime.fromisoformat(user_doc['created_at'])
     
     user = User(**user_doc)
+    user_response = UserResponse(**user.model_dump())
     
     # Create token
     access_token = create_access_token(data={"sub": user.id})
@@ -443,7 +444,7 @@ async def login(credentials: UserLogin):
     return TokenResponse(
         access_token=access_token,
         token_type="bearer",
-        user=user
+        user=user_response
     )
 
 @api_router.get("/auth/me", response_model=UserResponse)
