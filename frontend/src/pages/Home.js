@@ -215,7 +215,7 @@ const Home = () => {
       {/* Features */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50" data-testid="features-section">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">Why Choose ServiceMarket?</h2>
+          <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">Why Choose <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">SD DEAL</span>?</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="text-center">
               <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
