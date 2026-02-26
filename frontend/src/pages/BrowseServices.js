@@ -18,7 +18,10 @@ const BrowseServices = () => {
   });
 
   useEffect(() => {
-    fetchData();
+    const timeoutId = setTimeout(() => {
+      fetchData();
+    }, 500); // Debounce search
+    return () => clearTimeout(timeoutId);
   }, [filters]);
 
   const fetchData = async () => {
