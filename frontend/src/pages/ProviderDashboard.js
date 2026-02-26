@@ -12,11 +12,15 @@ const ProviderDashboard = () => {
   const [activeTab, setActiveTab] = useState('overview');
 
   useEffect(() => {
-    fetchData();
-  }, []);
+    if (user) {
+      fetchData();
+    }
+  }, [user]);
 
   const fetchData = async () => {
+    if (!user) return;
     try {
+      setLoading(true);
       const [servicesRes, bookingsRes, walletRes] = await Promise.all([
         getMyServices(),
         getBookings(),
